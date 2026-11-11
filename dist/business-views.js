@@ -1,5 +1,5 @@
 let sustainabilityFocus='All resources',processStage=-1,kpiCategory='All pillars';
-const palette=['#55e8d2','#82b6ff','#ad98f8','#ffc776','#fc8eaa'];
+const palette=['#a0f7da','#a9ccff','#d4b4fa','#ffd09d','#f5a5ce'];
 function scopeData(){const f=state.factory<0?1:factories[state.factory].output/428640,p=$('#period').value||'Today',days=p==='Today'?1:p==='This week'?7:30;return {f,p,days,total:f*days,labels:p==='Today'?['06:00','08:00','10:00','12:00','14:00','16:00']:p==='This week'?['Mon','Tue','Wed','Thu','Fri','Sat']:['W1','W2','W3','W4','W5','W6']}}
 function nfmt(v){return Number(v).toLocaleString(undefined,{maximumFractionDigits:2})}
 function chartPoint(title,label,value,unit){openModal(title,`<div class="metric-reading">${nfmt(value)} <small>${unit}</small></div><strong>${label}</strong><br><br>Scope: ${state.factory<0?'All factories':factories[state.factory].name}<br>Period: ${$('#period').value||'Today'}<br><br>Illustrative business data. Use this view to compare performance, targets and areas requiring action.`)}
