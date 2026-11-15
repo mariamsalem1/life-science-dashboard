@@ -19,7 +19,18 @@ function measure(){
  document.querySelectorAll('.maintenance-render').forEach(el=>el.style.setProperty('--asset-stage-height',el.getBoundingClientRect().height+'px'));
  const key=state.tab+'|'+state.factory+'|'+(typeof maint==='undefined'?'':maint.type+'|'+maint.status+'|'+maint.search+'|'+maint.index);
  document.querySelectorAll('.maintenance-register-list').forEach((el,i)=>{const rows=[...el.children].filter(x=>!x.classList.contains('maint-empty'));rows.forEach(x=>x.hidden=false);const h=el.getBoundingClientRect().height;pager(el,rows,Math.max(1,Math.floor((h-27)/65)),key+'assets'+i)});
- main.querySelectorAll('.table-scroll').forEach((el,i)=>{const rows=[...el.querySelectorAll('tr')].filter(x=>x.querySelector('td'));if(!rows.length)return;rows.forEach(x=>x.hidden=false);const header=el.querySelector('tr:has(th)');const rowHeight=Math.max(27,rows[0].getBoundingClientRect().height||30);const available=el.getBoundingClientRect().height-(header?.getBoundingClientRect().height||30)-28;pager(el,rows,Math.max(1,Math.floor(available/rowHeight)),key+'table'+i)});
+ main.querySelectorAll('.table-scroll').forEach((el,i)=>{
+ const rows=[...el.querySelectorAll('tr')].filter(x=>x.querySelector('td'));if(!rows.length)return;
+ // Measure the complete table with its pager out of the layout first.
+ rows.forEach(x=>x.hidden=false);if(el._viewportPager)el._viewportPager.hidden=true;
+ const table=el.querySelector('table'),header=el.querySelector('tr:has(th)');
+ const headerHeight=header?.getBoundingClientRect().height||28;
+ const rowHeight=Math.max(30,...rows.map(row=>row.getBoundingClientRect().height||34));
+ const available=el.getBoundingClientRect().height;
+ const allFit=(table?.getBoundingClientRect().height||headerHeight+rows.length*rowHeight)<=available+1;
+ const size=allFit?rows.length:Math.max(1,Math.floor((available-headerHeight-29)/rowHeight));
+ pager(el,rows,size,key+'table'+i);
+ });
  document.querySelectorAll('.maintenance-history ol').forEach((el,i)=>{const rows=[...el.children];rows.forEach(x=>x.hidden=false);pager(el,rows,Math.max(1,Math.floor((el.getBoundingClientRect().height-26)/43)),key+'history'+i)});
 }
 function schedule(){if(!pending){pending=true;raf(measure)}}
