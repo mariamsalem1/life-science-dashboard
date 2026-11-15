@@ -137,3 +137,22 @@ publicly or treat its shared access key as production identity/role management.
 Actual source endpoints and mappings, approved files/layouts, authentic telemetry,
 plant-side command drivers and authorization, and labeled fault history for any
 validated failure/RUL model. These cannot be inferred from the reference screenshots.
+
+## Factory-aligned CCTV
+
+The CCTV tab provides four views per factory: entrance, production observation
+corridor, packaging and warehouse/dispatch. The 16 illustrative camera stills
+match the four architectural campus identities. They are not surveyed or live
+footage and do not show a recording indicator or fabricated camera timestamp.
+
+Factory Overview → CCTV coverage adds clickable markers to the rendered campus
+and a selected-camera inspector. Locate on campus returns to that coverage view.
+Business-area and asset selection restore the normal business inspector.
+
+Source settings stores an HTTPS image snapshot URL per factory/camera. No
+streaming or recording is implemented. Source failures show an unavailable state
+instead of silently substituting an illustration. Refresh requests the image
+again; the gateway must set appropriate cache headers and allow image embedding.
+Adjust marker position in Source settings to align camera locations to a supplied
+site layout. Positions and URLs remain in this browser and are isolated by factory.
+CIP and PAT remain separate measurement-based quality-monitoring views.
