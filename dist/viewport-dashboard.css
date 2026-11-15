@@ -210,3 +210,4 @@ body.viewport-dashboard{height:100dvh;overflow:hidden}
 .viewport-dashboard .compact-panel .analytics-svg{height:100%;min-height:0}
 .viewport-dashboard .smart-factory-foot{display:flex;flex-direction:row;justify-content:space-between}
 @media(max-height:720px){.viewport-dashboard .maintenance-health-grid strong{font-size:18px}.viewport-dashboard .maintenance-health-grid>div,.viewport-dashboard .maintenance-readings>div{padding:5px}.viewport-dashboard .maintenance-advisory{padding:5px;margin:3px 0}.viewport-dashboard .maintenance-topline select{padding:4px 7px}.viewport-dashboard .maintenance-view-tabs button{padding:3px 7px}.viewport-dashboard .smart-area-inspector{gap:4px}.viewport-dashboard .smart-next-action{padding:5px}.viewport-dashboard .smart-factory-decisions small{font-size:8px}}
+.viewport-dashboard .terrain-campus-3d{object-fit:contain}.viewport-dashboard .viewport-section-host>.analytics-grid{flex:1;min-height:0}
