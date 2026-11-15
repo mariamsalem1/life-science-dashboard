@@ -1,0 +1,212 @@
+/* Viewport workspace: each screen owns the space below the shared navigation. */
+body.viewport-dashboard{height:100dvh;overflow:hidden}
+.viewport-dashboard main#main{box-sizing:border-box;height:var(--dashboard-height);min-height:0;max-height:none;overflow:hidden;display:flex;flex-direction:column;gap:9px;padding:10px 16px}
+.viewport-dashboard main>.kpis{flex:0 0 74px;min-height:0;margin:0;gap:10px}
+.viewport-dashboard .kpis>.card{min-height:0;padding:10px 15px;display:flex;flex-direction:column;justify-content:center}
+.viewport-dashboard .kpis .value{font-size:clamp(23px,2.1vw,34px);margin:3px 0}
+.viewport-dashboard .screen-content{flex:1;min-height:0;display:grid;gap:9px}
+.viewport-dashboard .screen-content>*{min-height:0;min-width:0;margin:0}
+.viewport-dashboard .screen-content .panel{min-height:0;min-width:0;padding:12px;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden}
+.viewport-dashboard .panelhead{flex:none;margin-bottom:7px;gap:7px}
+.viewport-dashboard .panel h2{font-size:clamp(12px,1vw,16px);margin:0}
+.viewport-dashboard .panel small{font-size:10px}
+.viewport-dashboard .business-strip{padding:8px 12px;font-size:11px;margin:0;min-height:0}
+.viewport-dashboard .analytics-grid{min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:9px;margin:0}
+.viewport-dashboard .analytics-grid>.panel{height:100%}
+.viewport-dashboard .analytics-svg{display:block;width:100%;height:100%;min-height:0;flex:1;max-height:none}
+.viewport-dashboard .analytics-svg text{font-size:15px}
+.viewport-dashboard .chart-caption{display:none}
+.viewport-dashboard .composition{flex:1;min-height:0;display:flex;align-items:center;gap:10px}
+.viewport-dashboard .composition-svg{height:100%;max-height:100%;width:45%;min-height:0}
+.viewport-dashboard .composition-legend{flex:1;min-width:0}
+.viewport-dashboard .composition-legend button{padding:5px;font-size:10px}
+.viewport-dashboard .table-scroll{flex:1;min-height:0;max-height:none;overflow:hidden}
+.viewport-dashboard table{width:100%;font-size:10px}
+.viewport-dashboard td,.viewport-dashboard th{padding:7px 6px}
+.viewport-dashboard .actions{flex:none;gap:6px;margin-top:7px;flex-wrap:wrap}
+.viewport-dashboard .actions button{font-size:10px;padding:6px 9px}
+.viewport-dashboard .board-guidance,.viewport-dashboard .smart-factory-foot{font-size:10px;padding:4px 8px;line-height:1.3}
+.viewport-dashboard footer{height:17px;box-sizing:border-box;padding:1px 16px;font-size:9px;overflow:hidden}
+.viewport-dashboard nav#nav{flex-wrap:nowrap;padding:5px 9px;gap:2px}
+.viewport-dashboard nav#nav button{white-space:nowrap;font-size:clamp(9px,.78vw,12px);padding:7px 9px}
+.viewport-dashboard .controls{padding:7px 16px;gap:10px}
+.viewport-dashboard .controls select{padding:6px 10px}
+.viewport-dashboard [hidden]{display:none!important}
+.viewport-pager{display:flex;align-items:center;justify-content:center;gap:10px;flex:none;height:25px;margin-top:4px;font-size:10px;color:#e6d4e2}
+.viewport-pager button{padding:3px 10px;font-size:11px;min-width:30px}
+.viewport-pager button:disabled{opacity:.35;cursor:default}
+.viewport-fullscreen{font-size:11px;padding:6px 9px;white-space:nowrap}
+.viewport-dashboard[data-screen="sustainability"] .screen-content{grid-template-rows:auto auto minmax(0,1fr)}
+.viewport-dashboard[data-screen="sustainability"] .analytics-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.viewport-dashboard[data-screen="sustainability"] .analytics-grid.filtered{grid-template-columns:repeat(2,minmax(0,1fr))}
+.viewport-dashboard .analytics-toolbar{margin:0;padding:0;gap:6px}
+.viewport-dashboard .analytics-toolbar button{padding:5px 10px;font-size:10px}
+.viewport-dashboard[data-screen="facility"] .screen-content{grid-template-rows:auto 115px minmax(0,1fr)}
+.viewport-dashboard .entity-grid{gap:9px;margin:0;min-height:0}
+.viewport-dashboard .entity-card{min-height:0;padding:10px}
+.viewport-dashboard[data-screen="process"] .screen-content{grid-template-rows:auto 140px minmax(0,1fr)}
+.viewport-dashboard .stage-grid{flex:1;min-height:0;margin:0;gap:7px}
+.viewport-dashboard .stage-card{padding:7px;min-height:0}
+.viewport-dashboard[data-screen="production-overview"] .screen-content{grid-template-rows:auto minmax(0,1fr) 150px}
+.viewport-dashboard[data-screen="production-overview"] .analytics-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.viewport-dashboard .plan-list{min-height:0;flex:1}
+.viewport-dashboard[data-screen="quality"] .screen-content,.viewport-dashboard[data-screen="workforce-mgmt"] .screen-content,.viewport-dashboard[data-screen="supply-chain"] .screen-content{grid-template-rows:auto minmax(0,1fr)}
+.viewport-dashboard .factory-choice{height:100%;min-height:0}
+.viewport-dashboard .factory-rows{gap:6px;min-height:0}
+.viewport-dashboard .factory-row{padding:7px;min-height:0}
+.viewport-dashboard .kpi-board{height:100%!important;min-height:0;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:9px}
+.viewport-dashboard[data-screen="business-kpis"] .screen-content{grid-template-rows:minmax(0,1fr) auto}
+.viewport-dashboard .kpi-panel{min-height:0;padding:11px;overflow:hidden}
+.viewport-dashboard .kpi-panel svg{max-height:100%}
+/* Packaging: machines take the remaining height above the line facts. */
+.viewport-dashboard[data-screen="packaging"] .screen-content{grid-template-rows:auto minmax(0,1fr) auto}
+.viewport-dashboard .pack-layout{height:100%;min-height:0;gap:10px}
+.viewport-dashboard .pack-lines{flex:1;min-height:0;gap:9px}
+.viewport-dashboard .pack-line{display:flex;flex-direction:column;min-height:0;padding:10px}
+.viewport-dashboard .pack-model-button{flex:1;min-height:0;display:flex}
+.viewport-dashboard .rendered-equipment-card,.viewport-dashboard .pack-line .model-view{height:100%;min-height:0;flex:1}
+.viewport-dashboard .pack-line .stats{flex:none}
+.viewport-dashboard .pack-line .stats>div{padding:7px 0;font-size:10px}
+.viewport-dashboard .line-select{flex:none;padding:0 0 6px;font-size:14px}
+.viewport-dashboard .line-progress{flex:none;margin-top:7px}
+.viewport-dashboard .pack-right{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 100px;gap:9px}
+.viewport-dashboard .rendered-equipment-large,.viewport-dashboard .pack-detail .model-large{height:auto;min-height:0;flex:1;margin:3px 0}
+.viewport-dashboard .rendered-equipment-large img,.viewport-dashboard .rendered-equipment-card img{height:100%;max-height:100%;object-fit:contain}
+.viewport-dashboard .pack-gauges{min-height:0;gap:9px}
+.viewport-dashboard .pack-gauges .mini-ring{height:61px;width:61px}
+.viewport-dashboard .pack-gauges .compact-gauge{padding:8px;min-height:0}
+.viewport-dashboard .station-buttons{margin:0;gap:5px}
+.viewport-dashboard .station-buttons button{padding:4px 8px;font-size:9px}
+/* Network and individual campuses retain their interactive 3D views. */
+.viewport-dashboard.terrain-network-mode .screen-content{grid-template-rows:auto 76px minmax(0,1fr) auto}
+.viewport-dashboard .terrain-header{margin:0;gap:8px}
+.viewport-dashboard .terrain-header h1{font-size:21px;margin:0}
+.viewport-dashboard .terrain-header p{margin:3px 0;font-size:11px}
+.viewport-dashboard .terrain-kpis{gap:10px;margin:0}
+.viewport-dashboard .terrain-kpi{padding:9px 14px;min-height:0}
+.viewport-dashboard .terrain-kpi>strong{font-size:25px}
+.viewport-dashboard .terrain-workspace{height:100%;min-height:0;grid-template-columns:190px minmax(0,1fr) 245px;gap:10px}
+.viewport-dashboard .terrain-stage{height:100%;min-height:0;margin:0}
+.viewport-dashboard .terrain-directory{overflow:hidden;padding:10px;display:flex;flex-direction:column}
+.viewport-dashboard .terrain-site-row{min-height:0;flex:1;padding:6px;gap:8px}
+.viewport-dashboard .terrain-site-row img{width:50px;height:48px}
+.viewport-dashboard .terrain-selected{padding:12px;display:flex;flex-direction:column;min-height:0}
+.viewport-dashboard .terrain-selected h2{font-size:19px}
+.viewport-dashboard .terrain-campus{height:auto;min-height:0;flex:1;object-fit:cover;margin-top:8px}
+.viewport-dashboard .site-readings{margin-top:8px}
+.viewport-dashboard .site-readings>div{padding:6px 0;font-size:10px}
+.viewport-dashboard .terrain-bottom{padding:0;gap:8px}
+.viewport-dashboard .terrain-bottom button{padding:6px 12px;font-size:11px}
+.viewport-dashboard.smart-factory-mode .screen-content{grid-template-rows:auto 74px minmax(0,1fr) 58px auto}
+.viewport-dashboard .smart-factory-heading{margin:0;gap:10px}
+.viewport-dashboard .smart-factory-heading h1{font-size:21px;margin:3px 0}
+.viewport-dashboard .smart-factory-heading p{margin:3px 0;font-size:10px}
+.viewport-dashboard .smart-summary{margin:0;gap:10px}
+.viewport-dashboard .smart-summary button{min-height:0;padding:9px 14px}
+.viewport-dashboard .smart-summary strong{font-size:26px}
+.viewport-dashboard .smart-factory-layout{min-height:0;gap:10px;grid-template-columns:minmax(0,1fr) 315px}
+.viewport-dashboard .smart-campus-viewer,.viewport-dashboard .smart-campus-panel>.model-large{height:auto;min-height:0;flex:1}
+.viewport-dashboard .smart-view-options{margin:3px 0;gap:5px}
+.viewport-dashboard .smart-view-options button{padding:4px 8px;font-size:9px}
+.viewport-dashboard .smart-area-strip{margin-top:6px;gap:5px;flex:none}
+.viewport-dashboard .smart-area-strip button{padding:6px;font-size:9px}
+.viewport-dashboard .smart-factory-inspector{min-height:0;display:flex}
+.viewport-dashboard .smart-area-inspector{flex:1;gap:7px}
+.viewport-dashboard .smart-area-inspector>p{font-size:10px;line-height:1.4}
+.viewport-dashboard .smart-area-inspector h2{font-size:19px}
+.viewport-dashboard .smart-next-action{padding:8px;margin:0}
+.viewport-dashboard .smart-next-action p{font-size:10px;line-height:1.4}
+.viewport-dashboard .smart-factory-decisions{display:grid!important;grid-template-columns:140px repeat(3,minmax(0,1fr));gap:8px;padding:7px 10px!important;align-items:center}
+.viewport-dashboard .smart-factory-decisions button{margin:0;padding:5px 8px;min-height:0}
+.viewport-dashboard .smart-factory-decisions strong{font-size:10px}
+.viewport-dashboard .smart-factory-decisions small{font-size:9px}
+/* Maintenance: asset, impact and history stay on one workspace. */
+.viewport-dashboard.maintenance-intelligence-mode .screen-content{grid-template-rows:auto 63px auto minmax(0,1.8fr) minmax(140px,.85fr)}
+.viewport-dashboard .maintenance-topline{margin:0;gap:8px}
+.viewport-dashboard .maintenance-topline h1{font-size:20px}
+.viewport-dashboard .maintenance-summary{margin:0;gap:10px}
+.viewport-dashboard .maintenance-summary-card{min-height:0;padding:8px 14px;gap:10px}
+.viewport-dashboard .maintenance-summary-card strong{font-size:25px}
+.viewport-dashboard .maintenance-main{min-height:0;gap:10px;grid-template-columns:minmax(215px,.8fr) minmax(0,1.4fr) minmax(290px,1.1fr)}
+.viewport-dashboard .maintenance-register input{padding:6px 8px;font-size:10px}
+.viewport-dashboard .maint-type-chips{margin:6px 0;gap:4px}
+.viewport-dashboard .maint-type-chips button{padding:4px 7px}
+.viewport-dashboard .maintenance-register-list{flex:1;min-height:0;max-height:none;overflow:hidden;display:block}
+.viewport-dashboard .maintenance-register-row{min-height:60px;padding:5px;margin-bottom:5px;box-sizing:border-box}
+.viewport-dashboard .maintenance-register-row>img{width:45px;height:46px}
+.viewport-dashboard .maintenance-register-row small{margin:1px 0 3px}
+.viewport-dashboard .maintenance-render,.viewport-dashboard .maintenance-piping,.viewport-dashboard .maintenance-assembly>.model-large{height:auto;min-height:0;flex:1;margin:3px 0;--asset-stage-height:240px}
+.viewport-dashboard .maintenance-main .panelhead{margin-bottom:5px}
+.viewport-dashboard .maintenance-assembly-tabs{margin:3px 0;flex:none}
+.viewport-dashboard .maintenance-assembly-tabs button{padding:4px 10px;font-size:9px}
+.viewport-dashboard .maintenance-health{gap:7px;margin:5px 0}
+.viewport-dashboard .maintenance-health>div{padding:8px}
+.viewport-dashboard .maintenance-health strong{font-size:21px}
+.viewport-dashboard .maintenance-readings{gap:6px;margin:4px 0}
+.viewport-dashboard .maintenance-readings>div{padding:7px}
+.viewport-dashboard .maintenance-readings strong{font-size:15px}
+.viewport-dashboard .maintenance-readings .bar{margin-top:5px}
+.viewport-dashboard .maintenance-advisory{padding:7px;margin:5px 0;gap:8px}
+.viewport-dashboard .maintenance-advisory strong{font-size:11px}
+.viewport-dashboard .maintenance-advisory span{font-size:9px;line-height:1.3;margin-top:2px}
+.viewport-dashboard .assigned-technician{font-size:10px;margin:4px 0;line-height:1.3}
+.viewport-dashboard .maintenance-work-state{margin:3px 0;font-size:8px}
+.viewport-dashboard .maintenance-bottom{min-height:0;gap:10px;margin:0}
+.viewport-dashboard .maintenance-bottom .analytics-svg{height:100%;min-height:0}
+.viewport-dashboard .maintenance-history ol{flex:1;min-height:0;margin:4px 0 0;overflow:hidden}
+.viewport-dashboard .maintenance-history li{min-height:43px;padding:5px 0;box-sizing:border-box}
+@media(max-height:800px){
+.viewport-dashboard main#main{gap:7px;padding:8px 12px}
+.viewport-dashboard main>.kpis{flex-basis:64px}
+.viewport-dashboard .screen-content .panel{padding:9px}
+.viewport-dashboard .kpis>.card{padding:7px 12px}
+.viewport-dashboard .kpis .value{font-size:25px}
+.viewport-dashboard .pack-line .stats>div{padding:5px 0}
+.viewport-dashboard .pack-right{grid-template-rows:minmax(0,1fr) 88px}
+.viewport-dashboard .maintenance-topline h1{font-size:17px}
+.viewport-dashboard .maintenance-summary-card{padding:6px 12px}
+.viewport-dashboard .maintenance-summary-card strong{font-size:22px}
+.viewport-dashboard.maintenance-intelligence-mode .screen-content{grid-template-rows:auto 55px auto minmax(0,1.8fr) minmax(130px,.8fr)}
+.viewport-dashboard .maintenance-advisory em{display:none}
+.viewport-dashboard .maintenance-main .actions button{padding:5px 6px;font-size:9px}
+.viewport-dashboard .smart-factory-heading h1{font-size:19px}
+}
+/* Narrow windows use horizontal section pages instead of vertical scrolling. */
+.viewport-dashboard .viewport-section-host{min-height:0;flex:1;display:flex;flex-direction:column;gap:5px}
+.viewport-dashboard .viewport-section-host>.viewport-section-page{flex:1;min-height:0;display:grid;gap:9px}
+@media(max-width:1100px){.viewport-dashboard nav#nav{overflow-x:auto}.viewport-dashboard .controls{gap:6px;padding:5px 10px}.viewport-dashboard .terrain-workspace{grid-template-columns:155px minmax(0,1fr) 210px}.viewport-dashboard .smart-factory-layout{grid-template-columns:minmax(0,1fr) 280px}.viewport-dashboard .maintenance-main{grid-template-columns:190px minmax(0,1fr) 270px}}
+/* Compact the existing facts rather than crop their content. */
+.viewport-dashboard .entity{min-height:0;padding:9px;font-size:11px}
+.viewport-dashboard .entity-icon{font-size:24px;margin:0 0 4px}
+.viewport-dashboard .entity .insight{margin-top:5px;padding:5px;font-size:10px}
+.viewport-dashboard .stage{min-height:0;padding:8px}
+.viewport-dashboard .stage strong{font-size:12px}
+.viewport-dashboard .stage small{font-size:9px}
+.viewport-dashboard .insight{font-size:11px;line-height:1.5;padding:8px;margin:6px 0}
+.viewport-dashboard.terrain-network-mode .screen-content{grid-template-rows:auto auto 76px minmax(0,1fr) auto}
+.viewport-dashboard.smart-factory-mode .screen-content{grid-template-rows:auto auto 74px minmax(0,1fr) 58px auto}
+.viewport-dashboard .maintenance-health-grid{margin:5px 0;gap:7px}
+.viewport-dashboard .maintenance-health-grid>div{padding:7px 9px}
+.viewport-dashboard .maintenance-health-grid strong{font-size:21px}
+.viewport-dashboard .maintenance-view-tabs{margin:3px 0;flex:none;gap:6px}
+.viewport-dashboard .maintenance-view-tabs button{padding:4px 10px;font-size:9px}
+.viewport-dashboard .maintenance-assembly-actions,.viewport-dashboard .maintenance-impact-actions{display:flex;gap:6px;flex:none;margin-top:5px}
+.viewport-dashboard .maintenance-assembly-actions button,.viewport-dashboard .maintenance-impact-actions button{padding:6px 8px;font-size:9px;min-width:0;flex:1}
+.viewport-dashboard .maintenance-advisory small{font-size:8px;line-height:1.3}
+.viewport-dashboard .cip-phases{display:flex;gap:5px;margin:4px 0;flex:none}
+.viewport-dashboard .cip-phases>*{padding:5px 8px;font-size:10px;flex:1}
+.viewport-dashboard[data-screen="quality"] .modal-metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin:5px 0;gap:6px}
+.viewport-dashboard[data-screen="quality"] .modal-metrics>div{padding:7px}
+.viewport-dashboard[data-screen="quality"] .modal-metrics strong{font-size:18px}
+.viewport-detail-button{align-self:flex-start;padding:4px 8px;font-size:10px;margin:3px 0}
+.viewport-dashboard .compact-panel{padding:9px!important;min-height:0}
+.viewport-dashboard .compact-panel .compact-heading{margin-bottom:6px}
+.viewport-dashboard .compact-panel .compact-heading h2{font-size:12px}
+.viewport-dashboard .compact-panel .compact-heading strong{font-size:21px}
+.viewport-dashboard .maintenance-register-row{width:100%}
+.viewport-dashboard .screen-content.single-screen{grid-template-rows:minmax(0,1fr)!important}
+.viewport-dashboard .screen-content.single-screen>.panel{height:100%}
+.viewport-dashboard .quality-combo>div{min-height:0}
+.viewport-dashboard .compact-panel .analytics-svg{height:100%;min-height:0}
+.viewport-dashboard .smart-factory-foot{display:flex;flex-direction:row;justify-content:space-between}
+@media(max-height:720px){.viewport-dashboard .maintenance-health-grid strong{font-size:18px}.viewport-dashboard .maintenance-health-grid>div,.viewport-dashboard .maintenance-readings>div{padding:5px}.viewport-dashboard .maintenance-advisory{padding:5px;margin:3px 0}.viewport-dashboard .maintenance-topline select{padding:4px 7px}.viewport-dashboard .maintenance-view-tabs button{padding:3px 7px}.viewport-dashboard .smart-area-inspector{gap:4px}.viewport-dashboard .smart-next-action{padding:5px}.viewport-dashboard .smart-factory-decisions small{font-size:8px}}
