@@ -1,0 +1,10 @@
+.reports-mode main>.kpis{display:none!important}
+.viewport-dashboard .report-workspace{height:100%;min-height:0}
+.report-workspace>.panelhead{flex:none;align-items:center}
+.report-filters{display:grid;grid-template-columns:1.25fr 1.15fr .85fr .95fr .85fr 1.25fr auto;gap:10px;align-items:end;flex:none;margin:8px 0 12px}
+.report-filters label{display:flex;flex-direction:column;gap:5px;font-size:10px;color:#e9d6e4;min-width:0}
+.report-filters select,.report-filters input{width:100%;min-width:0;background:#ffffff12;border:1px solid #ffffff50;color:#fff1f9;border-radius:8px;padding:8px 9px;font:11px 'Segoe UI',sans-serif;box-sizing:border-box}
+.report-filters input::placeholder{color:#cfbfce}.report-filters button{font-size:11px;padding:8px 12px}.report-summary{display:flex;justify-content:space-between;gap:15px;padding:9px 12px;margin-bottom:10px;border:1px solid #b6ffdf44;background:#b6ffdf0c;border-radius:9px;font-size:11px;flex:none}.report-summary strong{color:#baffdf}
+.report-table{flex:1;min-height:0;overflow-x:auto!important;overflow-y:hidden!important}.report-table table{table-layout:fixed;min-width:1180px}.report-table th{font-size:10px;text-transform:capitalize}.report-table td{font-size:10px;max-width:170px}.report-notice{flex:none;font-size:10px;line-height:1.4;color:#dfccdc;padding-top:7px}
+@media(max-width:1200px){.report-filters{grid-template-columns:repeat(4,minmax(0,1fr))}.report-summary{font-size:10px}.report-summary span:last-child{max-width:45%}}
+@media(max-height:760px){.report-filters{gap:6px;margin:5px 0 7px}.report-filters select,.report-filters input{padding:6px 8px}.report-summary{padding:6px 10px;margin-bottom:7px}.report-notice{font-size:9px}}
