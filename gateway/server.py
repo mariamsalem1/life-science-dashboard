@@ -21,7 +21,7 @@ TOKEN = os.environ.get('OPS_GATEWAY_TOKEN', '')
 ORIGINS = set(filter(None, os.environ.get('OPS_ALLOWED_ORIGINS', 'http://127.0.0.1:8088').split(',')))
 DB = Path(os.environ.get('OPS_GATEWAY_DB', str(Path(__file__).with_name('operations.sqlite3'))))
 SESSIONS = {}
-ACTIONS = {'line': {'Running', 'Stopped', 'Changeover'}, 'batch': {'start', 'hold', 'resume', 'advance'}, 'alarm': {'acknowledge', 'resolve'}, 'workOrder': {'assign', 'complete'}}
+ACTIONS = {'processSystem': {'Running', 'Stopped'}, 'line': {'Running', 'Stopped', 'Changeover'}, 'batch': {'start', 'hold', 'resume', 'advance'}, 'alarm': {'acknowledge', 'resolve'}, 'workOrder': {'assign', 'complete'}}
 
 
 @contextmanager
@@ -160,7 +160,7 @@ class Gateway(BaseHTTPRequestHandler):
                     return self.response(409, {'error': 'Publish a factory snapshot before requesting commands'})
                 snapshot = json.loads(snapshot_row[0])
                 kind_name, target = payload.get('kind'), str(payload.get('target', ''))
-                targets = {'line': [str(row['index']) for row in snapshot.get('production', {}).get('lines', [])], 'batch': [row['id'] for row in snapshot.get('batches', [])], 'alarm': [row['id'] for row in snapshot.get('alarms', [])], 'workOrder': [row['id'] for row in snapshot.get('assets', [])]}
+                targets = {'processSystem': [row['id'] for row in snapshot.get('processSystems', [])], 'line': [str(row['index']) for row in snapshot.get('production', {}).get('lines', [])], 'batch': [row['id'] for row in snapshot.get('batches', [])], 'alarm': [row['id'] for row in snapshot.get('alarms', [])], 'workOrder': [row['id'] for row in snapshot.get('assets', [])]}
                 if target not in targets.get(kind_name, []):
                     return self.response(409, {'error': 'Target not present in the factory snapshot'})
                 message = 'Queued for the authorized plant adapter. No equipment command has been executed.'

@@ -156,3 +156,39 @@ again; the gateway must set appropriate cache headers and allow image embedding.
 Adjust marker position in Source settings to align camera locations to a supplied
 site layout. Positions and URLs remain in this browser and are isolated by factory.
 CIP and PAT remain separate measurement-based quality-monitoring views.
+
+## Video-reference alignment
+
+Quality is now the former business KPI scorecard; there is one Quality navigation
+item. CIP/PAT readings remain accessible through its CIP & PAT details button.
+Reports → Export Quality PDF uses the selected factory, period, status, data source
+and search filters. The export includes quality, customer, compliance, delivery,
+defect, cost and downtime measures. The optional appendix adds charts/breakdowns;
+a compact scorecard of every matching measure remains available without it.
+
+CCTV is entered through Factory Overview, not a separate navigation route. Camera
+marker positions stay fixed on hover, and their click events do not initiate panning.
+
+Process exposes OEE, utilization, batch execution, run/stop controls, alarms, URS
+and functional-specification access. Live execution still requires the configured
+authorized plant gateway; demo controls remain local.
+
+Workforce now includes work instructions, troubleshoots, forms, checklists, improvement
+categories and twelve-month trends, learning records, endorsements, exam attempts,
+employee engagement, on-time delivery and the Egypt workforce map. Qualified people
+and maintenance assignment are still accessible through Qualified roster & assignments.
+
+The JSON template includes `workforceAnalytics` with standardization[4], learning[3]
+(name/created/uploaded), endorsement[passed%,failed%], attempts, engagement[connections,
+posts,views,comments,likes], improvementLabels[4], improvementSeries[3] (name/values),
+monthLabels[12], monthSeries[3], deliveryLabels[4], deliveryValues[4], employees and
+billablePercent. Supply this alongside the workforce roster in a matching-period
+snapshot. Without that section, the analytics remain explicitly illustrative.
+Factory-network percentage trends use unweighted averages; standardization and
+engagement counts are summed across the selected factory scope.
+
+Process-system controls have their own demonstration state; they do not change
+packaging-line status. A connected snapshot can include processSystems[0..3] with
+index (0–2), id, name and status (Running/Stopped). Gateway command kind is
+processSystem with the supplied target ID. The reference gateway queues this
+request for an authorized adapter; it never actuates a process system itself.

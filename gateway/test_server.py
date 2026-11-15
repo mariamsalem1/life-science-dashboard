@@ -33,7 +33,7 @@ class GatewayTests(unittest.TestCase):
         gateway.DB = Path(self.tmp.name) / 'test.sqlite3'
         gateway.TOKEN = 'development-test-key-at-least-24-characters'
         gateway.ORIGINS = {'https://dashboard.test'}
-        self.snapshot = {'schemaVersion': 1, 'factory': 0, 'period': 'Today', 'production': {'lines': [{'index': 0}]}, 'assets': [{'id': 'CAI-P-104'}]}
+        self.snapshot = {'schemaVersion': 1, 'factory': 0, 'period': 'Today', 'production': {'lines': [{'index': 0}]}, 'assets': [{'id': 'CAI-P-104'}], 'processSystems': [{'index': 0, 'id': 'CAI-PROC-L1', 'status': 'Running'}]}
         req = Request('/api/factories/0/snapshot', self.snapshot)
         req.do_POST()
         self.assertEqual(req.result[0], 200)
@@ -78,6 +78,15 @@ class GatewayTests(unittest.TestCase):
         req = Request('/api/factories/0/commands', command)
         req.do_POST()
         self.assertEqual(req.result[1]['status'], 'executed')
+
+    def test_process_system_is_queued_without_mutating_telemetry(self):
+        req = Request('/api/factories/0/commands', {**self.command(), 'kind': 'processSystem', 'target': 'CAI-PROC-L1'})
+        req.do_POST()
+        self.assertEqual(req.result[0], 202)
+        self.assertEqual(req.result[1]['status'], 'accepted')
+        with gateway.connect() as db:
+            record = json.loads(db.execute('SELECT body FROM snapshots WHERE factory=0').fetchone()[0])
+            self.assertEqual(record['processSystems'][0]['status'], 'Running')
 
     def test_target_and_factory_validation(self):
         req = Request('/api/factories/0/commands', {**self.command(), 'target': '999'})
