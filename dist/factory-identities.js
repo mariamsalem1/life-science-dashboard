@@ -1,9 +1,9 @@
 /* A distinct illustrative architectural identity for every factory. */
 const factoryArchitecture=[
-{src:'assets/factory-detailed-campus.png',style:'Connected manufacturing campus',positions:{'Workforce Mgmt':[26,65],Quality:[17,35],Process:[46,23],Packaging:[72,34],Facility:[82,14],Maintenance:[76,64]}},
-{src:'assets/factory-delta-campus.png',style:'Courtyard manufacturing campus',positions:{'Workforce Mgmt':[23,58],Quality:[30,32],Process:[48,18],Packaging:[74,44],Facility:[86,23],Maintenance:[71,67]}},
-{src:'assets/factory-alexandria-campus.png',style:'Coastal biologics research campus',positions:{'Workforce Mgmt':[49,68],Quality:[19,55],Process:[40,26],Packaging:[76,43],Facility:[83,18],Maintenance:[84,61]}},
-{src:'assets/factory-suez-campus.png',style:'High-capacity industrial campus',positions:{'Workforce Mgmt':[18,27],Quality:[21,57],Process:[46,28],Packaging:[73,44],Facility:[83,17],Maintenance:[70,70]}}
+{src:'assets/factory-detailed-campus.png',style:'Connected manufacturing campus',positions:{'Workforce':[26,65],Quality:[17,35],Process:[46,23],Packaging:[72,34],Facility:[82,14],Maintenance:[76,64]}},
+{src:'assets/factory-delta-campus.png',style:'Courtyard manufacturing campus',positions:{'Workforce':[23,58],Quality:[30,32],Process:[48,18],Packaging:[74,44],Facility:[86,23],Maintenance:[71,67]}},
+{src:'assets/factory-alexandria-campus.png',style:'Coastal Manufacturing Campus',positions:{'Workforce':[49,68],Quality:[19,55],Process:[40,26],Packaging:[76,43],Facility:[83,18],Maintenance:[84,61]}},
+{src:'assets/factory-suez-campus.png',style:'High-capacity industrial campus',positions:{'Workforce':[18,27],Quality:[21,57],Process:[46,28],Packaging:[73,44],Facility:[83,17],Maintenance:[70,70]}}
 ];
 function architectureFor(i=factoryIndex()){return factoryArchitecture[i]||factoryArchitecture[0]}
 window.currentFactoryModelVariant=()=>factoryIndex();

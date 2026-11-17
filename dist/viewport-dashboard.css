@@ -50,7 +50,7 @@ body.viewport-dashboard{height:100dvh;overflow:hidden}
 .viewport-dashboard[data-screen="production-overview"] .screen-content{grid-template-rows:auto minmax(0,1fr) 150px}
 .viewport-dashboard[data-screen="production-overview"] .analytics-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .viewport-dashboard .plan-list{min-height:0;flex:1}
-.viewport-dashboard[data-screen="quality"] .screen-content,.viewport-dashboard[data-screen="workforce-mgmt"] .screen-content,.viewport-dashboard[data-screen="supply-chain"] .screen-content{grid-template-rows:auto minmax(0,1fr)}
+.viewport-dashboard[data-screen="quality"] .screen-content,.viewport-dashboard[data-screen="workforce"] .screen-content,.viewport-dashboard[data-screen="supply-chain"] .screen-content{grid-template-rows:auto minmax(0,1fr)}
 .viewport-dashboard .factory-choice{height:100%;min-height:0}
 .viewport-dashboard .factory-rows{gap:6px;min-height:0}
 .viewport-dashboard .factory-row{padding:7px;min-height:0}
