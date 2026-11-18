@@ -1,0 +1,27 @@
+/* Reference-inspired network background with translucent, reactive glass. */
+:root{--bg:#09071c;--panel:#19172e52;--glass-border:#e0e8ff40;--line:#dce3ff26;--text:#f5f7ff;--muted:#c3c9df;--glass-shadow:0 12px 30px #00000030,inset 0 1px 0 #ffffff15}
+html,body,body.executive-readable{background:#09071c;color:var(--text)}
+body:before{background:linear-gradient(#03020c18,#03020c18),url('assets/network-background.png') center/cover no-repeat;opacity:1}
+.panel,.card,.scorecard,.entity,.compact-panel,.linecard,.terrain-kpi,.terrain-directory,.terrain-selected,.maintenance-summary-card,.maintenance-register-row,.utility-service,.factory-drawer-metrics>div{background:linear-gradient(135deg,#dddfff17,#ece8ff08);border:1px solid #e0e8ff40;box-shadow:var(--glass-shadow);backdrop-filter:blur(11px) saturate(135%);-webkit-backdrop-filter:blur(11px) saturate(135%);transition:background .18s ease,border-color .18s ease,box-shadow .18s ease}
+.panel:hover,.card:hover,.scorecard:hover,.entity:hover,.compact-panel:hover,.linecard:hover,.terrain-kpi:hover,.terrain-directory:hover,.terrain-selected:hover,.maintenance-summary-card:hover,.maintenance-register-row:hover,.utility-service:hover,.factory-drawer-metrics>div:hover{background:linear-gradient(135deg,#d1eaff2b,#c9bcff16);border-color:#b9f7ff9e;box-shadow:0 0 0 1px #b0efff2b,0 0 26px #79dfff20,inset 0 1px 0 #ffffff38}
+.panel:focus-within,.card:focus-within,.entity:focus-within,.compact-panel:focus-within,.linecard:focus-within,.utility-service:focus-within{border-color:#b9f7ff9e;box-shadow:0 0 0 1px #b0efff40,0 0 22px #79dfff1a}
+.maintenance-health-grid>div:hover,.maintenance-readings>div:hover,.factory-drawer-reading:hover,.utility-advisory:hover{background:#cce8ff1b;border-color:#c8f7ff90;box-shadow:0 0 18px #83dbff20}
+body:not(.map-mode)>.controls,body:not(.map-mode)>nav,body>header,.business-strip,.facility-action-ribbon{background:linear-gradient(135deg,#ffffff12,#ffffff06);border-color:#e0e8ff40;backdrop-filter:blur(16px) saturate(130%);-webkit-backdrop-filter:blur(16px) saturate(130%)}
+button,input,select,textarea{background:linear-gradient(135deg,#ffffff10,#ffffff06);border-color:#dce6ff40;color:#f4f7ff}
+button:hover{background:linear-gradient(135deg,#b8efff2b,#dabdff22);border-color:#c8f7ffad;box-shadow:0 0 18px #83dbff25,inset 0 1px 0 #ffffff2b}
+select option{background:#211b36;color:#fff}
+nav button{background:transparent}nav button.active{background:linear-gradient(130deg,#a0f7da25,#b9cbff12);border-color:#bcffea80;box-shadow:inset 0 -2px 0 #a0f7da,0 0 18px #a0f7da1b}
+.title h1,.panel h2,.card .value,.card small,.compact-heading h2{color:#f5f7ff}
+small,.panelhead small,.title p,.crumb,.crumb button,label,.chart-caption,.note,.stats span,th,.sub,.scope-label,.source-context{color:#c5ccdf}
+.stage,.sentiment-grid button,.product-ratings button,.delivery-details button,.plan-list button,.workforce-site-list button,.maintenance-health-grid>div,.maintenance-readings>div,.factory-drawer-reading,.factory-drawer-areas button,.utility-advisory{background:linear-gradient(130deg,#ffffff11,#ffffff05);border-color:#e4eaff32}
+.stage.active,.linecard.selected,.maintenance-register-row.selected,.utility-service.selected{background:linear-gradient(135deg,#a0f7da1b,#c4d1ff0b);border-color:#b3ffe590;box-shadow:inset 0 0 22px #b5ffe808,0 0 15px #c0efff15}
+.mini-ring:before,.donut:before,.utility-budget-ring>span{background:#201d34e8}
+.utility-focus>.panel{background:#00000008}.utility-advisory,.factory-drawer-reading{backdrop-filter:blur(9px)}
+#workforce-network-map{background:#11102938}.workforce-site-list button:hover{background:#b9ddff28;border-color:#c4f7ff90}
+dialog,#factory-drawer{background:linear-gradient(135deg,#161328dd,#121024d9);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-color:#dbe7ff50}
+dialog::backdrop,#factory-drawer::backdrop{background:#05031060;backdrop-filter:blur(3px)}
+.map-mode header,.map-mode>.controls,.map-mode nav,.map-mode .navigation-handle,.map-switcher,.map-tag,.map-bottom button,.map-bottom .light,.map-detail,.network-panel,.map-empty.show,.leaflet-tooltip.factory-tooltip,.chart-tooltip{background:linear-gradient(140deg,#17142bd9,#131025c9);backdrop-filter:blur(17px);border-color:#dbe7ff40}
+.terrain-pin>span,.terrain-notice,.terrain-zoom button,.camera-campus-caption,.factory-drawer-model-controls>button,.maintenance-render-controls button{background:#19162bd9;border-color:#e2eaff40}
+.camera-walker{display:none!important}
+footer{background:#09071c35;border-color:#ffffff16;color:#c4cce0}
+@media(prefers-reduced-motion:reduce){.panel,.card,.scorecard,.entity,.compact-panel,.linecard,.terrain-kpi,.utility-service{transition:none}}
