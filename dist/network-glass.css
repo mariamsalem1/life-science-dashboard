@@ -1,7 +1,12 @@
 /* Reference-inspired network background with translucent, reactive glass. */
 :root{--bg:#09071c;--panel:#19172e52;--glass-border:#e0e8ff40;--line:#dce3ff26;--text:#f5f7ff;--muted:#c3c9df;--glass-shadow:0 12px 30px #00000030,inset 0 1px 0 #ffffff15}
 html,body,body.executive-readable{background:#09071c;color:var(--text)}
-body:before{background:linear-gradient(#03020c18,#03020c18),url('assets/network-background.png') center/cover no-repeat;opacity:1}
+/* Keep one persistent background outside the workspace that is replaced on navigation. */
+html{background-color:#09071c;background-image:linear-gradient(#03020c18,#03020c18),url('assets/network-background.png');background-position:center;background-size:cover;background-repeat:no-repeat;background-attachment:fixed}
+body,body.executive-readable{background:transparent}
+body:before{display:none}
+/* Fading/moving the parent also fades the glass blur and briefly exposes sharp mesh lines. */
+main#main.page-enter{animation:none!important;transform:none!important;opacity:1!important}
 .panel,.card,.scorecard,.entity,.compact-panel,.linecard,.terrain-kpi,.terrain-directory,.terrain-selected,.maintenance-summary-card,.maintenance-register-row,.utility-service,.factory-drawer-metrics>div{background:linear-gradient(135deg,#dddfff17,#ece8ff08);border:1px solid #e0e8ff40;box-shadow:var(--glass-shadow);backdrop-filter:blur(11px) saturate(135%);-webkit-backdrop-filter:blur(11px) saturate(135%);transition:background .18s ease,border-color .18s ease,box-shadow .18s ease}
 .panel:hover,.card:hover,.scorecard:hover,.entity:hover,.compact-panel:hover,.linecard:hover,.terrain-kpi:hover,.terrain-directory:hover,.terrain-selected:hover,.maintenance-summary-card:hover,.maintenance-register-row:hover,.utility-service:hover,.factory-drawer-metrics>div:hover{background:linear-gradient(135deg,#d1eaff2b,#c9bcff16);border-color:#b9f7ff9e;box-shadow:0 0 0 1px #b0efff2b,0 0 26px #79dfff20,inset 0 1px 0 #ffffff38}
 .panel:focus-within,.card:focus-within,.entity:focus-within,.compact-panel:focus-within,.linecard:focus-within,.utility-service:focus-within{border-color:#b9f7ff9e;box-shadow:0 0 0 1px #b0efff40,0 0 22px #79dfff1a}
