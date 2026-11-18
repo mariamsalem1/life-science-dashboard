@@ -2,7 +2,9 @@
 :root{--bg:#09071c;--panel:#19172e52;--glass-border:#e0e8ff40;--line:#dce3ff26;--text:#f5f7ff;--muted:#c3c9df;--glass-shadow:0 12px 30px #00000030,inset 0 1px 0 #ffffff15}
 html,body,body.executive-readable{background:#09071c;color:var(--text)}
 /* Keep one persistent background outside the workspace that is replaced on navigation. */
-html{background-color:#09071c;background-image:linear-gradient(#03020c18,#03020c18),url('assets/network-background.png');background-position:center;background-size:cover;background-repeat:no-repeat;background-attachment:fixed}
+html{background-color:#09071c;background-image:none}
+/* Blur only the persistent background layer, never the dashboard UI. */
+html:before{content:'';position:fixed;inset:-10px;z-index:-1;pointer-events:none;background:linear-gradient(#03020c18,#03020c18),url('assets/network-background.png') center/cover no-repeat;filter:blur(3.5px)}
 body,body.executive-readable{background:transparent}
 body:before{display:none}
 /* Fading/moving the parent also fades the glass blur and briefly exposes sharp mesh lines. */
