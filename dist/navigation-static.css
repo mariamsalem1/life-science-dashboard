@@ -1,0 +1,48 @@
+/* The map menu stays at one position. Close only changes its visibility. */
+body.map-mode nav#nav{
+ position:fixed!important;inset:118px auto 16px 16px!important;
+ width:280px!important;max-width:calc(100vw - 32px);height:auto!important;
+ max-height:none!important;min-height:0!important;transform:none!important;
+ transition:none!important;animation:none!important;
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ grid-template-rows:repeat(var(--nav-count,13),minmax(0,1fr));
+ gap:3px!important;padding:44px 12px 12px!important;
+ overflow:visible!important;z-index:1000;border-radius:14px;
+}
+body.map-mode nav#nav:before{content:'Navigation';position:absolute;top:13px;left:16px;font-size:16px;font-weight:600;color:#edf9ff}
+body.map-mode nav#nav button:not(.navigation-close){width:100%;min-width:0;min-height:0!important;height:100%;padding:5px 12px!important;text-align:left;font-size:15px!important;white-space:normal!important;line-height:1.15;transform:none!important;transition:background .15s,border-color .15s!important}
+body nav#nav{transition:none!important;animation:none!important}
+body nav#nav .navigation-close{min-height:28px!important;height:28px!important;width:28px!important;padding:0!important;line-height:1!important;font-size:23px!important;transition:none!important}
+body.map-mode nav#nav .navigation-close{top:9px;right:10px;transform:none!important}
+body .navigation-handle{display:none!important}
+body .navigation-reopen{display:none!important;position:fixed!important;left:16px!important;top:118px!important;right:auto!important;bottom:auto!important;z-index:1200;transform:none!important;transition:none!important;animation:none!important;padding:10px 16px;min-height:42px;border:1px solid #80daef99;border-radius:10px;background:#102e43f5;color:#edf9ff;box-shadow:0 5px 20px #0004;font-size:15px}
+body.dashboard-navigation-closed nav#nav{display:none!important}
+body.dashboard-navigation-closed .navigation-reopen{display:block!important}
+body:not(.map-mode).dashboard-navigation-closed main{padding-top:52px!important}
+@media(max-height:650px){body.map-mode nav#nav{top:112px!important;bottom:10px!important;padding-top:38px!important;gap:2px!important}body.map-mode nav#nav button:not(.navigation-close){font-size:14px!important;padding:2px 10px!important}body .navigation-reopen{top:112px!important}}
+@media(max-width:650px){body.map-mode nav#nav{top:170px!important;left:12px!important;bottom:12px!important;width:260px!important;max-width:calc(100vw - 24px)}body .navigation-reopen{top:170px!important;left:12px!important}}
+
+/* Leave a clear gap between branding, factory controls and map tools. */
+body.map-mode>header{left:16px!important;top:16px!important;width:426px!important;max-width:calc(100vw - 32px);height:88px!important;box-sizing:border-box;padding:14px 16px!important}
+body.map-mode>.controls{left:458px!important;right:268px!important;top:20px!important;width:auto!important;max-width:none!important;box-sizing:border-box;min-height:60px;padding:10px 14px!important;gap:10px!important;background:linear-gradient(135deg,#12384cf5,#0b1e31f5)!important;border:1px solid #80daef99!important;align-items:center}
+body.map-mode>.controls label:first-of-type{gap:12px;width:100%;font-size:14px!important;font-weight:600;white-space:nowrap}
+body.map-mode>.controls label:first-of-type select{flex:1;width:auto!important;min-width:0!important;max-width:none!important;margin:0!important;font-size:15px!important;min-height:40px;background:#173e52!important;border:1px solid #91dbe999;color:#f3fbff}
+body.map-mode .map-switcher{right:16px!important;top:20px!important}
+@media(max-width:1100px){body.map-mode>.controls{left:16px!important;right:16px!important;top:112px!important;min-height:56px}body.map-mode nav#nav{top:180px!important}body.map-mode .navigation-reopen{top:180px!important}}
+@media(max-width:740px){body.map-mode>header{width:calc(100vw - 32px)!important}.map-mode .brand{min-width:0}.map-mode .brand strong{font-size:16px!important}.map-mode .brand .sub{font-size:10px!important;letter-spacing:1px!important}.map-mode .schneider-brand-logo{width:125px!important}body.map-mode .map-switcher{top:auto!important;bottom:20px!important;right:12px!important}body.map-mode .map-tag{display:none}body.map-mode nav#nav{bottom:82px!important}}
+
+/* Slim, fixed left-edge opener. Nothing moves when it is pressed. */
+body.dashboard-navigation-closed .navigation-reopen{left:0!important;top:42%!important;right:auto!important;bottom:auto!important;width:32px!important;height:180px!important;min-height:0!important;padding:12px 6px!important;writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:1.5px;font-size:12px!important;border-left:0;border-radius:0 8px 8px 0;transform:none!important}
+body:not(.map-mode) nav#nav{position:fixed!important;inset:118px auto 16px 16px!important;width:280px!important;max-width:calc(100vw - 32px);height:auto!important;max-height:none!important;min-height:0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:repeat(var(--nav-count,13),minmax(0,1fr));gap:3px!important;padding:44px 12px 12px!important;overflow:visible!important;z-index:1000;border-radius:14px;transform:none!important;background:linear-gradient(135deg,#12384cf5,#0b1e31f5)!important}
+body:not(.map-mode) nav#nav:before{content:'Navigation';position:absolute;top:13px;left:16px;font-size:16px;font-weight:600;color:#edf9ff}
+body:not(.map-mode) nav#nav button:not(.navigation-close){width:100%;min-width:0;min-height:0!important;height:100%;padding:5px 12px!important;text-align:left;font-size:15px!important;white-space:normal!important;line-height:1.15;transform:none!important}
+body:not(.map-mode) nav#nav .navigation-close{top:9px;right:10px;transform:none!important}
+body:not(.map-mode).dashboard-navigation-closed main{padding-top:12px!important}
+body.dashboard-navigation-closed nav#nav{display:none!important}
+/* Compact factory selector beside the project name. */
+body.map-mode>.controls{width:310px!important;right:auto!important;min-height:52px!important;padding:6px 10px!important;gap:8px!important}
+body.map-mode>.controls label:first-of-type{font-size:13px!important;gap:8px!important}
+body.map-mode>.controls label:first-of-type select{font-size:14px!important;min-height:36px!important}
+body.map-mode>.controls .viewport-fullscreen{display:none!important}
+@media(max-width:1100px){body.map-mode>.controls{width:310px!important;left:16px!important;right:auto!important;top:112px!important}}
+@media(max-width:650px){body.map-mode>.controls{width:calc(100vw - 32px)!important;max-width:310px!important}body:not(.map-mode) nav#nav{top:100px!important;bottom:12px!important;left:12px!important;width:260px!important}}
