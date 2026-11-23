@@ -1,0 +1,21 @@
+/* One cyan glass surface system for cards, map overlays and hover details. */
+:root{--cyan-card-surface:linear-gradient(135deg,#123449a8,#0b1c329e);--cyan-card-hover:linear-gradient(135deg,#1b4b60c7,#133249b8);--cyan-detail-surface:linear-gradient(140deg,#12384cf5,#0b1e31fa);--cyan-border:#80daef66;--cyan-border-hover:#acfff1b3;--cyan-card-shadow:0 8px 24px #00000028,inset 0 1px 0 #bef4ff16;--glass-border:var(--cyan-border)}
+body.executive-readable :is(.panel,.card,.scorecard,.entity,.compact-panel,.linecard,.pack-line,.terrain-kpi,.terrain-directory,.terrain-selected,.maintenance-summary-card,.maintenance-register-row,.utility-service,.smart-summary>button,.smart-factory-decisions>button,.factory-drawer-metrics>div){background:var(--cyan-card-surface)!important;border-color:var(--cyan-border);box-shadow:var(--cyan-card-shadow);backdrop-filter:blur(15px) saturate(125%);-webkit-backdrop-filter:blur(15px) saturate(125%)}
+body.executive-readable :is(.panel,.card,.scorecard,.entity,.compact-panel,.linecard,.pack-line,.terrain-kpi,.terrain-directory,.terrain-selected,.maintenance-summary-card,.maintenance-register-row,.utility-service,.smart-summary>button,.smart-factory-decisions>button,.factory-drawer-metrics>div):hover{background:var(--cyan-card-hover)!important;border-color:var(--cyan-border-hover);box-shadow:0 0 0 1px #acfff11c,0 0 22px #64e9f224,inset 0 1px 0 #d2ffff26}
+body.executive-readable :is(.stage,.sentiment-grid button,.product-ratings button,.delivery-details button,.plan-list button,.workforce-site-list button,.workforce-engagement button,.maintenance-health-grid>div,.maintenance-readings>div,.factory-drawer-reading,.smart-next-action){background:linear-gradient(135deg,#94d9ef14,#6cb4cf09);border-color:#93dff23d}
+body.executive-readable :is(.selected,.active).pack-line,body.executive-readable .maintenance-register-row.selected,body.executive-readable .utility-service.selected,body.executive-readable .terrain-site-row.selected{border-color:#a0f7da;box-shadow:0 0 16px #a0f7da24,inset 0 1px 0 #c9fff521}
+.viz-tooltip,.chart-tooltip,.leaflet-tooltip.factory-tooltip{background:var(--cyan-detail-surface)!important;border:1px solid #9cefe1a6!important;color:#edf9ff!important;box-shadow:0 10px 32px #00000050,inset 0 1px 0 #d6ffff1f;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.viz-tooltip .viz-tooltip-title{color:#a4f8df;font-size:12px}
+.viz-tooltip .viz-tooltip-label,.viz-tooltip .viz-tooltip-extra{color:#d6e7f0;font-size:13px}
+.viz-tooltip .viz-tooltip-value{color:#f3fbff}
+.viz-tooltip .viz-tooltip-scope{color:#b9d2de;border-top-color:#b3e6f529;font-size:12px}
+.leaflet-tooltip.factory-tooltip:before{border-top-color:#12384c!important}
+body .map-detail,body .network-panel,body .map-empty.show{background:var(--cyan-detail-surface)!important;border-color:var(--cyan-border);color:#edf9ff;box-shadow:var(--cyan-card-shadow)}
+body .map-mode header,body.map-mode header,body.map-mode>.controls,body.map-mode nav,.map-switcher,.map-tag,.map-bottom .light{background:linear-gradient(135deg,#123449dc,#0b1c32dc)!important;border-color:var(--cyan-border);color:#edf9ff}
+body.executive-readable>.controls,body.executive-readable>nav{background:linear-gradient(135deg,#12344999,#0b1c328f)!important;border-color:var(--cyan-border)}
+dialog,#factory-drawer{background:linear-gradient(135deg,#102c40f2,#0a1b30f5)!important;border-color:var(--cyan-border);color:#edf9ff}
+.modal-metrics>div,.record-card,.report-preview-card{background:var(--cyan-card-surface);border-color:var(--cyan-border)}
+.mini-ring:before,.donut:before,.utility-budget-ring>span{background:#0f293c!important}
+.business-strip,.facility-action-ribbon{background:linear-gradient(130deg,#15374b99,#0c233a85)!important;border-color:#8cdbec48}
+.downtime-panel{border-color:#ffd09d80!important}
+.maintenance-advisory,.maintenance-advisory.critical-advisory{box-shadow:none}
