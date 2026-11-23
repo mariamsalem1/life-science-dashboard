@@ -19,3 +19,23 @@ dialog,#factory-drawer{background:linear-gradient(135deg,#102c40f2,#0a1b30f5)!im
 .business-strip,.facility-action-ribbon{background:linear-gradient(130deg,#15374b99,#0c233a85)!important;border-color:#8cdbec48}
 .downtime-panel{border-color:#ffd09d80!important}
 .maintenance-advisory,.maintenance-advisory.critical-advisory{box-shadow:none}
+
+.network-panel .enterprise-performance-kpis{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.network-panel .enterprise-performance-kpis .card{min-width:0;padding:12px}
+.network-panel .enterprise-performance-kpis .value{font-size:clamp(21px,2vw,28px);white-space:nowrap}
+@media(max-width:700px){.network-panel .enterprise-performance-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.role-learning{display:flex;flex-direction:column;gap:6px;overflow:hidden}
+.role-learning .panelhead{margin:0;gap:5px}.role-learning .panelhead h2{font-size:16px}.role-learning .panelhead button{padding:5px 8px;font-size:12px;white-space:nowrap}
+.learning-filters{display:flex;gap:5px}.learning-filters select{min-width:0;width:33.33%;padding:5px;font-size:12px}
+.learning-status{display:flex;align-items:center;gap:12px;font-size:11px}.learning-status strong{font-size:17px;color:#a4f8df}.learning-status small{margin-left:auto;font-size:10px}
+.learning-curve{width:100%;flex:1;min-height:55px;overflow:visible}.learning-curve text{fill:#d6e7f0;font:11px sans-serif}.learning-curve circle:hover,.learning-curve circle:focus{r:6;stroke:white;stroke-width:2;cursor:pointer}.learning-course-summary{font-size:11px;line-height:1.3;color:#d6e7f0}
+
+body #nav{position:relative;padding-right:44px!important}
+body #nav .navigation-close{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;min-width:0;padding:0;font-size:23px;line-height:1;border:1px solid #80daef66;background:#123449b0;border-radius:8px}
+body .navigation-reopen{display:none}
+body.dashboard-navigation-closed #nav{display:none!important}
+body.dashboard-navigation-closed .navigation-reopen{display:inline-flex;align-items:center;white-space:nowrap}
+
+/* Enterprise KPI cards show only the metric name and value. */
+.network-panel .enterprise-performance-kpis .card small.positive{display:none!important}
