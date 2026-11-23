@@ -39,3 +39,24 @@ body.dashboard-navigation-closed .navigation-reopen{display:inline-flex;align-it
 
 /* Enterprise KPI cards show only the metric name and value. */
 .network-panel .enterprise-performance-kpis .card small.positive{display:none!important}
+
+
+/* Keep the map drawer separate from the horizontal dashboard tabs. */
+body.map-mode nav#nav{
+ position:fixed!important;inset:118px auto 16px 16px!important;
+ width:280px!important;max-width:calc(100vw - 32px);height:auto!important;
+ max-height:none!important;min-height:0!important;transform:none!important;
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ grid-template-rows:repeat(var(--nav-count,13),minmax(0,1fr));
+ gap:3px!important;padding:44px 12px 12px!important;
+ overflow:visible!important;z-index:1000;border-radius:14px;
+}
+body.map-mode nav#nav:before{content:'Navigation';position:absolute;top:13px;left:16px;font-size:16px;font-weight:600;color:#edf9ff}
+body.map-mode nav#nav button:not(.navigation-close){width:100%;min-width:0;min-height:0!important;height:100%;padding:5px 12px!important;text-align:left;font-size:15px!important;white-space:normal!important;line-height:1.15}
+body nav#nav .navigation-close{min-height:28px!important;height:28px!important;width:28px!important;padding:0!important;line-height:1!important;font-size:23px!important}
+body.map-mode nav#nav .navigation-close{top:9px;right:10px;transform:none!important}
+body .navigation-handle{display:none!important}
+body.dashboard-navigation-closed nav#nav{display:none!important}
+body.map-mode.dashboard-navigation-closed>.controls{min-width:300px}
+@media(max-height:650px){body.map-mode nav#nav{top:112px!important;bottom:10px!important;padding-top:38px!important;gap:2px!important}body.map-mode nav#nav button:not(.navigation-close){font-size:14px!important;padding:2px 10px!important}}
+@media(max-width:650px){body.map-mode nav#nav{top:170px!important;left:12px!important;bottom:12px!important;width:260px!important;max-width:calc(100vw - 24px)}body.map-mode.dashboard-navigation-closed>.controls{min-width:0;width:calc(100vw - 24px);max-width:350px}}
