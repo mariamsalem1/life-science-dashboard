@@ -1,0 +1,22 @@
+/* Keep the artwork visible behind the glass when tab content is replaced. */
+html{background:#070918!important}
+html:before,body:before{display:none!important}
+body,body.executive-readable{background:transparent!important;isolation:isolate}
+#dashboard-backdrop{
+ position:fixed;inset:-10px;z-index:-1;pointer-events:none;
+ background:linear-gradient(#b1eaff0a,#b1eaff0a),url('assets/dashboard-atmosphere.png') center/cover no-repeat;
+ background-blend-mode:normal;
+ filter:blur(1.5px) brightness(1.35) saturate(.85);opacity:1;transform:none;animation:none;transition:none;
+}
+html.earth-network-background #dashboard-backdrop{
+ background:linear-gradient(#02071435,#03051a50),url('assets/holographic-earth-horizon.png') center/cover no-repeat;
+ background-blend-mode:normal;filter:blur(3px);
+}
+
+/* More transparent glass lets the shared artwork show through each data card. */
+:root{--cyan-card-surface:linear-gradient(135deg,#24536b45,#13263d2e);--cyan-card-hover:linear-gradient(135deg,#39758b70,#24475b52);--cyan-detail-surface:linear-gradient(140deg,#12384cd9,#0b1e31d6);--cyan-border:#a4e7ff66;--cyan-card-shadow:0 8px 24px #00000028,inset 0 1px 0 #d9ffff30}
+body.executive-readable :is(.panel,.card,.scorecard,.entity,.compact-panel,.linecard,.pack-line,.terrain-kpi,.terrain-directory,.terrain-selected,.maintenance-summary-card,.maintenance-register-row,.utility-service,.smart-summary>button,.smart-factory-decisions>button,.factory-drawer-metrics>div){backdrop-filter:blur(7px) saturate(115%);-webkit-backdrop-filter:blur(7px) saturate(115%)}
+body.executive-readable :is(.stage,.sentiment-grid button,.product-ratings button,.delivery-details button,.plan-list button,.workforce-site-list button,.workforce-engagement button,.maintenance-health-grid>div,.maintenance-readings>div,.factory-drawer-reading,.smart-next-action){background:linear-gradient(135deg,#7fd5e51c,#49627f14)!important;border-color:#a4e7ff40}
+/* Keep the real map usable while the same background remains visible beneath it. */
+body.map-mode .full-map,body.map-mode .offline-grid{background:transparent!important}
+body.map-mode .full-map .leaflet-tile-pane{opacity:1!important;filter:none!important}
