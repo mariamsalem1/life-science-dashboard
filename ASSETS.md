@@ -9,6 +9,14 @@
   by current camera views. The walking-person overlay has been removed.
 - `dist/assets/network-background.png`: full-screen adaptation of the supplied
   blue/violet network reference image, with screenshot controls removed.
+- `dist/assets/dashboard-atmosphere.png`: approved dark cyan/mint/violet background
+  for all dashboard views, with a quiet center and subtle perimeter mesh.
+- `dist/assets/holographic-egypt.png`: transparent map-only artwork derived from
+  the approved holographic network concept. Factory markers, connection paths,
+  labels and selected-site readings are rendered separately as interactive UI.
+  The geography and marker locations are illustrative, not surveyed GIS positions.
+- `dist/assets/holographic-earth-horizon.png`: decorative cyan Earth-at-night
+  backdrop behind the holographic platform, matching the approved reference style.
 
 Camera identifiers, campus coverage and configured HTTPS image endpoints remain
 specific to the selected factory. A configured endpoint is shown directly and does
